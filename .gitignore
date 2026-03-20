@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Database
+data/approval.db
+
+# Archives
+*.zip
+*.ZIP
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Screenshots / docs (not needed for deploy)
+사진/
+
+# Environment
+.env
+
+# Claude Code
+.claude/
