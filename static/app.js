@@ -1754,7 +1754,15 @@ function showView(viewId) {
   $$("#tabs button").forEach((b) => b.classList.toggle("active", b.dataset.view === viewId));
 }
 
+function hideLandingShowApp() {
+  const lp = document.getElementById("landingPage");
+  const main = document.querySelector("main.layout");
+  if (lp) lp.style.display = "none";
+  if (main) main.style.display = "";
+}
+
 function setLoggedIn(loggedIn) {
+  hideLandingShowApp();
   $("#loginView").classList.toggle("hidden", loggedIn);
   $("#appView").classList.toggle("hidden", !loggedIn);
 }
@@ -5740,4 +5748,9 @@ ensureUserPickerModalMountedToBody();
 bindEvents();
 setEditorFormMode();
 syncDraftTemplateTypeUI();
+
+// 랜딩 페이지 버튼 이벤트
+document.getElementById("landingLoginBtn")?.addEventListener("click", () => { hideLandingShowApp(); });
+document.getElementById("landingStartBtn")?.addEventListener("click", () => { hideLandingShowApp(); });
+
 bootstrap();
