@@ -5566,8 +5566,8 @@ def run(host: str, port: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="KT BizOffice 스타일 웹 전자결재 시스템")
-    parser.add_argument("--host", default="127.0.0.1", help="서버 바인드 주소")
-    parser.add_argument("--port", type=int, default=8080, help="서버 포트")
+    parser.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"), help="서버 바인드 주소")
+    parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8080")), help="서버 포트")
     args = parser.parse_args()
     run(args.host, args.port)
 
