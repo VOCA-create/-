@@ -2016,6 +2016,12 @@ async function initTabsForCurrentUser() {
 async function bootstrap() {
   if (!state.token) {
     resetGoogleSession();
+    // 랜딩 페이지가 있으면 랜딩 유지, 로그인 화면은 아직 숨김
+    const lp = document.getElementById("landingPage");
+    if (lp && lp.style.display !== "none") {
+      await initLoginGoogleAuth(true);
+      return;
+    }
     setLoggedIn(false);
     await initLoginGoogleAuth(true);
     return;
