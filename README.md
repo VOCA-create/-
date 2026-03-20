@@ -1,4 +1,4 @@
-﻿# KT BizOffice 연계형 웹 전자결재 시스템
+비영리기관 전자결재 시스템
 
 `https://gw.ktbizoffice.com/sub/service.html`의 서비스 소개 기준으로 핵심 기능을 추출해, 실제 동작 가능한 웹 전자결재 시스템을 구현했습니다.
 
